@@ -5,7 +5,6 @@ $.ajax({
   url: urlData,
   dataType: "JSON"
 }).done(function(data) {
-  console.log(data);
   Object.keys(data).forEach(function(key) {
     let $assigmnentA = $(`.assignmentAData`);
     $assigmnentA.append(`<div> Date from: ${data[key].DATETIME_FROM} </div>`);
@@ -31,7 +30,6 @@ $.ajax({
         $(`.assigmnentATableUl${key}`).append(
           `<li> <div>${k}</div> <div>${data[key][k]}</div></li>`
         );
-        console.log(data[key][k] + " " + key);
       });
     $assigmnentA.append(`<div class="spaceDiv"></div>`);
   });
